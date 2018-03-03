@@ -7,6 +7,8 @@ require "capistrano/deploy"
 require 'capistrano/rails'
 require 'capistrano/bundler'
 require 'capistrano/rvm'
+require 'capistrano/rails/migrations'
+require 'capistrano/rails/assets'
 require 'capistrano/puma'
 
 # Load the SCM plugin appropriate to your project:
@@ -19,6 +21,9 @@ require 'capistrano/puma'
 # or
 require "capistrano/scm/git"
 install_plugin Capistrano::SCM::Git
+
+require 'capistrano/puma'
+install_plugin Capistrano::Puma
 
 # Include tasks from other gems included in your Gemfile
 #
